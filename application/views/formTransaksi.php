@@ -11,15 +11,15 @@
 
     <!-- Tailwinds -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="/assets/style/tailwind.css" rel="stylesheet">
+    <link href="/style/tailwind.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/style/style.css">
+    <link rel="stylesheet" href="/style/style.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <title>Document</title>
+    <title>Form Transaksi</title>
 </head>
 
 <body class="body-bg min-h-screen pt-9 md:pt-20 pb-4 md:px-0">
@@ -31,18 +31,20 @@
         </section>
 
         <section class="mt-6">
-            <form class="bg-transparent" action="#" method="post" autocomplete="off">
+            <form class="bg-transparent" action="#" method="post" autocomplete="off" name="operator">
                 <div class="block mt-2 rounded">
                     <label class="block text-sm text-gray-600">Name</label>
                     <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="cus_name" name="cus_name" type="text" required="" placeholder="Your Name">
                 </div>
                 <div class="block mt-2 rounded">
                     <label class="block text-sm text-gray-600">Phone Number</label>
-                    <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="phoneNumber" name="phoneNumber" type="text" required="" placeholder="0822xxxxxxxx">
+                    <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="phoneNumber" name="phoneNumber" type="text" required="" placeholder="0822xxxxxxxx" onkeyup="cekNomorHP()">
                 </div>
-                <div class="autocomplete inline-block mt-2 w-1/2 pr-1">
+                <div class="inline-block mt-2 w-1/2 pr-1">
                     <label class="block text-sm text-gray-600">Operator</label>
-                    <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="myInput" name="operator" type="text" required="" placeholder="Operator">
+                    <!-- <p class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2"
+                        id="myInput">-</p> -->
+                    <input type="text" class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="myInput">
                 </div>
                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                     <label class="block text-sm text-gray-600">Nominal</label>
@@ -139,112 +141,125 @@
     </script>
 
     <script>
-        function autocomplete(inp, arr) {
-            /*the autocomplete function takes two arguments,
-            the text field element and an array of possible autocompleted values:*/
-            var currentFocus;
-            /*execute a function when someone writes in the text field:*/
-            inp.addEventListener("input", function(e) {
-                var a, b, i, val = this.value;
-                /*close any already open lists of autocompleted values*/
-                closeAllLists();
-                if (!val) {
-                    return false;
-                }
-                currentFocus = -1;
-                /*create a DIV element that will contain the items (values):*/
-                a = document.createElement("DIV");
-                a.setAttribute("id", this.id + "autocomplete-list");
-                a.setAttribute("class", "autocomplete-items");
-                /*append the DIV element as a child of the autocomplete container:*/
-                this.parentNode.appendChild(a);
-                /*for each item in the array...*/
-                for (i = 0; i < arr.length; i++) {
-                    /*check if the item starts with the same letters as the text field value:*/
-                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-                        /*create a DIV element for each matching element:*/
-                        b = document.createElement("DIV");
-                        /*make the matching letters bold:*/
-                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-                        b.innerHTML += arr[i].substr(val.length);
-                        /*insert a input field that will hold the current array item's value:*/
-                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-                        /*execute a function when someone clicks on the item value (DIV element):*/
-                        b.addEventListener("click", function(e) {
-                            /*insert the value for the autocomplete text field:*/
-                            inp.value = this.getElementsByTagName("input")[0].value;
-                            /*close the list of autocompleted values,
-                            (or any other open lists of autocompleted values:*/
-                            closeAllLists();
-                        });
-                        a.appendChild(b);
-                    }
-                }
-            });
-            /*execute a function presses a key on the keyboard:*/
-            inp.addEventListener("keydown", function(e) {
-                var x = document.getElementById(this.id + "autocomplete-list");
-                if (x) x = x.getElementsByTagName("div");
-                if (e.keyCode == 40) {
-                    /*If the arrow DOWN key is pressed,
-                    increase the currentFocus variable:*/
-                    currentFocus++;
-                    /*and and make the current item more visible:*/
-                    addActive(x);
-                } else if (e.keyCode == 38) { //up
-                    /*If the arrow UP key is pressed,
-                    decrease the currentFocus variable:*/
-                    currentFocus--;
-                    /*and and make the current item more visible:*/
-                    addActive(x);
-                } else if (e.keyCode == 13) {
-                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
-                    e.preventDefault();
-                    if (currentFocus > -1) {
-                        /*and simulate a click on the "active" item:*/
-                        if (x) x[currentFocus].click();
-                    }
-                }
-            });
+        function cekNomorHP() {
+            var x = document.forms["operator"]["phoneNumber"].value;
 
-            function addActive(x) {
-                /*a function to classify an item as "active":*/
-                if (!x) return false;
-                /*start by removing the "active" class on all items:*/
-                removeActive(x);
-                if (currentFocus >= x.length) currentFocus = 0;
-                if (currentFocus < 0) currentFocus = (x.length - 1);
-                /*add class "autocomplete-active":*/
-                x[currentFocus].classList.add("autocomplete-active");
-            }
+            const operators = {
+                "operators": [{
+                        "prefix": 0811,
+                        "operator": "Halo"
+                    },
+                    {
+                        "prefix": 0812,
+                        "operator": "Simpati"
+                    },
+                    {
+                        "prefix": 0813,
+                        "operator": "Simpati"
+                    },
+                    {
+                        "prefix": 0821,
+                        "operator": "Simpati"
+                    },
+                    {
+                        "prefix": 0822,
+                        "operator": "Simpati"
+                    },
+                    {
+                        "prefix": 0852,
+                        "operator": "AS"
+                    },
+                    {
+                        "prefix": 0853,
+                        "operator": "AS"
+                    },
+                    {
+                        "prefix": 0823,
+                        "operator": "AS"
+                    },
+                    {
+                        "prefix": 0851,
+                        "operator": "AS"
+                    },
+                    {
+                        "prefix": 0814,
+                        "operator": "Indosat M2 Broadband"
+                    },
+                    {
+                        "prefix": 0815,
+                        "operator": "Matrix"
+                    },
+                    {
+                        "prefix": 0816,
+                        "operator": "Matrix"
+                    },
+                    {
+                        "prefix": 0855,
+                        "operator": "Matrix"
+                    },
+                    {
+                        "prefix": 0856,
+                        "operator": "IM3"
+                    },
+                    {
+                        "prefix": 0857,
+                        "operator": "IM3"
+                    },
+                    {
+                        "prefix": 0858,
+                        "operator": "Mentari"
+                    },
+                    {
+                        "prefix": 0817,
+                        "operator": "XL"
+                    },
+                    {
+                        "prefix": 0818,
+                        "operator": "XL"
+                    },
+                    {
+                        "prefix": 0819,
+                        "operator": "XL"
+                    },
+                    {
+                        "prefix": 0859,
+                        "operator": "XL"
+                    },
+                    {
+                        "prefix": 0877,
+                        "operator": "XL"
+                    },
+                    {
+                        "prefix": 0878,
+                        "operator": "XL"
+                    },
+                    {
+                        "prefix": 0838,
+                        "operator": "Axis"
+                    },
+                    {
+                        "prefix": 0831,
+                        "operator": "Axis"
+                    },
+                    {
+                        "prefix": 0832,
+                        "operator": "Axis"
+                    },
+                ]
+            };
 
-            function removeActive(x) {
-                /*a function to remove the "active" class from all autocomplete items:*/
-                for (var i = 0; i < x.length; i++) {
-                    x[i].classList.remove("autocomplete-active");
-                }
-            }
-
-            function closeAllLists(elmnt) {
-                /*close all autocomplete lists in the document,
-                except the one passed as an argument:*/
-                var x = document.getElementsByClassName("autocomplete-items");
-                for (var i = 0; i < x.length; i++) {
-                    if (elmnt != x[i] && elmnt != inp) {
-                        x[i].parentNode.removeChild(x[i]);
+            const nohpElem = document.querySelector("#phoneNumber");
+            const opElem = document.querySelector("#myInput");
+            nohpElem.addEventListener('keyup', (event) => {
+                let prefix = nohpElem.value;
+                let substr = prefix.substring(0, 4);
+                operators.operators.forEach((operator) => {
+                    if (substr == operator.prefix) {
+                        opElem.value = operator.operator;
                     }
-                }
-            }
-            /*execute a function when someone clicks in the document:*/
-            document.addEventListener("click", function(e) {
-                closeAllLists(e.target);
+                })
             });
         }
-
-        /* An array containing all the operator names :*/
-        var operator = ["Telkomsel", "Halo", "Simpati", "AS", "Indosat M2 Broadband", "Indosat", "Matrix", "IM3", "Mentari", "XL", "Axis"];
-        /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-        autocomplete(document.getElementById("myInput"), operator);
     </script>
 </body>
 
