@@ -19,42 +19,75 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <title>Sign In</title>
+    <title>Admin Panel</title>
 </head>
 
-<body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 md:px-0">
-    <header class="max-w-lg mx-auto">
-        <a href="#">
-            <h1 class="text-4xl font-bold text-black text-center">Sign In</h1>
-        </a>
-    </header>
+<body class="bg-gray-100 flex">
+    <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+        <div class="p-6">
+            <a href="#" class="text-white text-3xl font-semibold uppercase hovertext-gray-300">Admin</a>
+        </div>
+        <nav class="text-white text-base font-semibold pt-3">
+            <a href="adminPanel.html" class="flex items-center opacity-75 hover:opacity-100 text-white py-4 pl-6 nav-item">
+                <i class="fas fa-tachometer-alt mr-3"></i>Dashboard
+            </a>
+            <a href="transactionHistory.html" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                <i class="fas fa-table mr-3"></i>Transaction
+            </a>
+        </nav>
+    </aside>
 
-    <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
-        <section>
-            <h3 class="font-bold text-2xl">Welcome</h3>
-            <p class="text-gray-600 pt-2">Sign In</p>
-        </section>
+    <div class="w-full flex flex-col h-screen overflow-y-hidden">
+        <div class="w-full overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow p-6">
+                <h1 class="text-3xl text-black pb-6">Transaction</h1>
 
-        <section class="mt-10">
-            <form class="flex flex-col" action="#" method="post">
-                <div class="mb-4 pt-3 rounded bg-gray-200">
-                    <label class="block text-gray-700 text-sm font-bold mb-1 ml-3" for="username">Username</label>
-                    <input type="text" id="username" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2">
+                <div class="w-full mt-12">
+                    <p class="text-xl pb-3 flex items-center">
+                        <i class="fas fa-list mr-3"></i>History
+                    </p>
+                    <div class="bg-white overflow-auto">
+                        <table class="min-w-full bg-white">
+                            <thead class="bg-gray-800 text-white">
+                                <tr>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nama</th>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nomor HP</th>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Operator</th>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nominal</th>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr>
+                                    <td class="text-left py-3 px-4">001</td>
+                                    <td class="text-left py-3 px-4">Aldi Himawan</td>
+                                    <td class="text-left py-3 px-4">08123456789</td>
+                                    <td class="text-left py-3 px-4">Google</td>
+                                    <td class="text-left py-3 px-4">Rp 100.000,00</td>
+                                    <td class="text-left py-3 px-4">
+                                        <button class="relative bg-green-200 rounded-full button">Edit</button>
+                                        <button class="relative bg-red-200 rounded-full button">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left py-3 px-4">002</td>
+                                    <td class="text-left py-3 px-4">Kuro</td>
+                                    <td class="text-left py-3 px-4">08223456789</td>
+                                    <td class="text-left py-3 px-4">Edge</td>
+                                    <td class="text-left py-3 px-4">Rp 100.000,00</td>
+                                    <td class="text-left py-3 px-4">
+                                        <button class="relative bg-green-200 rounded-full button">Edit</button>
+                                        <button class="relative bg-red-200 rounded-full button">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="mb-4 pt-3 rounded bg-gray-200">
-                    <label class="block text-gray-700 text-sm font-bold mb-1 ml-3" for="password">Password</label>
-                    <input type="password" id="username" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2">
-                </div>
-                <button class="bg-blue-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
-            </form>
-        </section>
-    </main>
-
-    <footer class="max-w-lg mx-auto flex justify-center text-blue-400">
-        <a href="#" class="hover:underline">Contact</a>
-        <span class="mx-3">•</span>
-        <a href="#" class="hover:underline">Privacy</a>
-    </footer>
+            </main>
+        </div>
+    </div>
 </body>
 
 </html>

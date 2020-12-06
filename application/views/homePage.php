@@ -45,6 +45,42 @@
             <div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
                 <img class="w-5/6 mx-auto lg:mr-0" src="">
             </div>
+
+            <!-- Leaderboard -->
+            <div class="w-full flex flex-col h-screen overflow-y-hidden">
+                <div class="w-full overflow-x-hidden border-t flex flex-col">
+                    <main class="w-full flex-grow p-6">
+                        <div class="w-full mt-12">
+                            <p class="text-xl pb-3 flex items-center">
+                                <i class="fas fa-list mr-3"></i>Leaderboard
+                            </p>
+                            <div class="bg-white overflow-auto">
+                                <table class="min-w-full bg-white">
+                                    <thead class="bg-gray-800 text-white">
+                                        <tr>
+                                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
+                                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nama</th>
+                                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Operator</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-gray-700">
+                                        <tr>
+                                            <td class="text-left py-3 px-4">001</td>
+                                            <td class="text-left py-3 px-4">Aldi Himawan</td>
+                                            <td class="text-left py-3 px-4">Google</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left py-3 px-4">002</td>
+                                            <td class="text-left py-3 px-4">Kuro</td>
+                                            <td class="text-left py-3 px-4">Edge</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -45,7 +45,7 @@
                     <label class="block text-gray-700 text-sm font-bold mb-1 ml-3" for="password">Password</label>
                     <input type="password" id="username" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2">
                 </div>
-                <button class="bg-blue-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
+                <input type="button" class="bg-blue-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" value="Sign In">
             </form>
         </section>
     </main>
