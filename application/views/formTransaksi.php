@@ -11,10 +11,10 @@
 
     <!-- Tailwinds -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="/style/tailwind.css" rel="stylesheet">
+    <link href="/assets/style/tailwind.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/assets/style/style.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
