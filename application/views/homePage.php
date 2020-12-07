@@ -42,8 +42,8 @@
             </div>
 
             <!-- Right Col -->
-            <div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
-                <img class="w-5/6 mx-auto lg:mr-0" src="">
+            <div class="w-full xl:w-3/5 overflow-y-hidden">
+                <a href="https://storyset.com/communication"><img class="w-5/6 mx-auto lg:mr-0" src="/assets/image/Call center-amico.svg"></a>
             </div>
 
             <!-- Leaderboard -->
