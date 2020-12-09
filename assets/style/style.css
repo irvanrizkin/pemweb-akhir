@@ -5,7 +5,7 @@ body {
 }
 
 .bg-sidebar {
-	background-color: #3D68FF;
+	background-color: #3D68FF !important;
 	font-weight: 700;
 }
 
@@ -21,7 +21,7 @@ body {
 	background: #1947ee;
 }
 
-.button {
+button {
 	width: 5rem;
 }
 
