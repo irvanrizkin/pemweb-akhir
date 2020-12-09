@@ -12,13 +12,22 @@ class Model_admin extends CI_Model {
     public function get_admin_all()
     {
         return $this->db
-                ->get('admin');                
+                ->get('admin')
+                ->result_array();                
     }
 
     public function get_admin_by_id($id)
     {
         return $this->db
-                ->get('admin',['id_admin' => $id]);                
+                ->get('admin',['id_admin' => $id])
+                ->result_array();                
+    }
+
+    public function get_admin_by_username($username)
+    {
+        return $this->db
+                ->get('admin',['username' => $username])
+                ->row_array();
     }
 
     public function update_admin($id,$data)

@@ -24,7 +24,7 @@
 
 <body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 md:px-0">
     <header class="max-w-lg mx-auto">
-        <a href="#">
+        <a href="<?= base_url('Pulsa/login');?>">
             <h1 class="text-4xl font-bold text-black text-center">Sign In</h1>
         </a>
     </header>
@@ -35,17 +35,20 @@
             <p class="text-gray-600 pt-2">Sign In</p>
         </section>
 
+        <?= $this->session->flashdata('message');?>
         <section class="mt-10">
-            <form class="flex flex-col" action="#" method="post">
+            <form class="flex flex-col" action="<?= base_url('Pulsa/login')?>" method="post">
                 <div class="mb-4 pt-3 rounded bg-gray-200">
                     <label class="block text-gray-700 text-sm font-bold mb-1 ml-3" for="username">Username</label>
-                    <input type="text" id="username" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2">
+                    <input type="text" id="username" name="username" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2">                    
                 </div>
+                <?= form_error('username','<small style="color:red">','</small>'); ?>
                 <div class="mb-4 pt-3 rounded bg-gray-200">
                     <label class="block text-gray-700 text-sm font-bold mb-1 ml-3" for="password">Password</label>
-                    <input type="password" id="username" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2">
-                </div>
-                <input type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" value="Sign In">
+                    <input type="password" id="password" name="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2">
+                </div>                
+                <?= form_error('password','<small style="color:red">','</small>'); ?>
+                <input type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" value="Sign In">                
             </form>
         </section>
     </main>
