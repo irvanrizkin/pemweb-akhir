@@ -11,10 +11,10 @@
 
     <!-- Tailwinds -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="/assets/style/tailwind.css" rel="stylesheet">
+    <link href="./assets/style/tailwind.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -23,15 +23,15 @@
 </head>
 
 <body class="bg-gray-100 flex">
-    <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+    <aside class="bg-blue-700 bg-sidebar relative h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="#" class="text-white text-3xl font-semibold uppercase hovertext-gray-300">Admin</a>
         </div>
         <nav class="text-white text-base font-semibold pt-3">
-            <a href="#" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+            <a href="admin" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
                 <i class="fas fa-tachometer-alt mr-3"></i>Dashboard
             </a>
-            <a href="transactionHistory.html" class="flex items-center opacity-75 hover:opacity-100 text-white py-4 pl-6 nav-item">
+            <a href="history" class="flex items-center opacity-75 hover:opacity-100 text-white py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>Transaction
             </a>
         </nav>

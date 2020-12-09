@@ -11,10 +11,10 @@
 
     <!-- Tailwinds -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="/assets/style/tailwind.css" rel="stylesheet">
+    <link href="./assets/style/tailwind.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -43,7 +43,7 @@
 
             <!-- Right Col -->
             <div class="w-full xl:w-3/5 overflow-y-hidden">
-                <a href="https://storyset.com/communication"><img class="w-5/6 mx-auto lg:mr-0" src="/assets/image/Call center-amico.svg"></a>
+                <a href="https://storyset.com/communication"><img class="w-5/6 mx-auto lg:mr-0" src="./assets/image/Call center-amico.svg"></a>
             </div>
 
             <!-- Leaderboard -->
