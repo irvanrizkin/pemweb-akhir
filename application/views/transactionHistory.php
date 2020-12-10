@@ -59,28 +59,19 @@
                                 </tr>
                             </thead>
                             <tbody class="text-gray-700">
+                                <?php foreach($transaksi as $row) { ?>
                                 <tr>
-                                    <td class="text-left py-3 px-4">001</td>
-                                    <td class="text-left py-3 px-4">Aldi Himawan</td>
-                                    <td class="text-left py-3 px-4">08123456789</td>
-                                    <td class="text-left py-3 px-4">Google</td>
-                                    <td class="text-left py-3 px-4">Rp 100.000,00</td>
+                                    <td class="text-left py-3 px-4"><?=$row['id_transaksi']?></td>
+                                    <td class="text-left py-3 px-4"><?=$row['nama']?></td>
+                                    <td class="text-left py-3 px-4"><?=$row['nomorhp']?></td>
+                                    <td class="text-left py-3 px-4"><?=$row['operator']?></td>
+                                    <td class="text-left py-3 px-4"><?=$row['nominal']?></td>
                                     <td class="text-left py-3 px-4">
-                                        <button class="relative bg-green-200 rounded-full button" style="width: 5rem;">Edit</button>
-                                        <button class="relative bg-red-200 rounded-full button" style="width: 5rem;">Delete</button>
+                                    <button class="relative bg-green-200 rounded-full button" style="width: 5rem;">Edit</button>
+                                    <button class="relative bg-red-200 rounded-full button" style="width: 5rem;">Delete</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="text-left py-3 px-4">002</td>
-                                    <td class="text-left py-3 px-4">Kuro</td>
-                                    <td class="text-left py-3 px-4">08223456789</td>
-                                    <td class="text-left py-3 px-4">Edge</td>
-                                    <td class="text-left py-3 px-4">Rp 100.000,00</td>
-                                    <td class="text-left py-3 px-4">
-                                        <button class="relative bg-green-200 rounded-full button" style="width: 5rem;">Edit</button>
-                                        <button class="relative bg-red-200 rounded-full button" style="width: 5rem;">Delete</button>
-                                    </td>
-                                </tr>
+                                <? }; ?>                                
                             </tbody>
                         </table>
                     </div>

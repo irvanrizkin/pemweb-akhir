@@ -34,9 +34,9 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
                 <div class="flex w-full space-x-10 justify-center md:justify-start pb-2 lg:pb-0">
-                    <a href="#" class="bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 p-2 mt-8 rounded-full px-4">
+                    <a href="<?= base_url('Pulsa/login');?>" class="bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 p-2 mt-8 rounded-full px-4">
                         Signin</a>
-                    <a href="#" class="bg-gray-200 font-bold text-lg hover:bg-gray-300 p-2 mt-8 rounded-full px-4">
+                    <a href="<?= base_url('Pulsa/transaksi');?>" class="bg-gray-200 font-bold text-lg hover:bg-gray-300 p-2 mt-8 rounded-full px-4">
                         Transaction</a>
                 </div>
             </div>
@@ -64,16 +64,13 @@
                                         </tr>
                                     </thead>
                                     <tbody class="text-gray-700">
+                                    <?php foreach($transaksi as $row) { ?>
                                         <tr>
-                                            <td class="text-left py-3 px-4">001</td>
-                                            <td class="text-left py-3 px-4">Aldi Himawan</td>
-                                            <td class="text-left py-3 px-4">Google</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left py-3 px-4">002</td>
-                                            <td class="text-left py-3 px-4">Kuro</td>
-                                            <td class="text-left py-3 px-4">Edge</td>
-                                        </tr>
+                                            <td class="text-left py-3 px-4"><?=$row['id_transaksi']?></td>
+                                            <td class="text-left py-3 px-4"><?=$row['nama']?></td>
+                                            <td class="text-left py-3 px-4"><?=$row['operator']?></td>
+                                        </tr>                                        
+                                    <? }; ?>   
                                     </tbody>
                                 </table>
                             </div>
