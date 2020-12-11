@@ -35,6 +35,10 @@
                 <i class="fas fa-table mr-3"></i>Transaction
             </a>
         </nav>
+        <a href="index" class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4">
+            <i class="fas fa-sign-out-alt mr-3"></i>
+            LogOut
+        </a>
     </aside>
 
     <div class="w-full flex flex-col h-screen overflow-y-hidden">

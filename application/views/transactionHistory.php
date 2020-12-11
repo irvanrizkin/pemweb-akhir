@@ -35,6 +35,10 @@
                 <i class="fas fa-table mr-3"></i>Transaction
             </a>
         </nav>
+        <a href="index" class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4">
+            <i class="fas fa-sign-out-alt mr-3"></i>
+            LogOut
+        </a>
     </aside>
 
     <div class="w-full flex flex-col h-screen overflow-y-hidden">
@@ -59,19 +63,23 @@
                                 </tr>
                             </thead>
                             <tbody class="text-gray-700">
-                                <?php foreach($transaksi as $row) { ?>
-                                <tr>
-                                    <td class="text-left py-3 px-4"><?=$row['id_transaksi']?></td>
-                                    <td class="text-left py-3 px-4"><?=$row['nama']?></td>
-                                    <td class="text-left py-3 px-4"><?=$row['nomorhp']?></td>
-                                    <td class="text-left py-3 px-4"><?=$row['operator']?></td>
-                                    <td class="text-left py-3 px-4"><?=$row['nominal']?></td>
-                                    <td class="text-left py-3 px-4">
-                                    <button class="relative bg-green-200 rounded-full button" style="width: 5rem;">Edit</button>
-                                    <button class="relative bg-red-200 rounded-full button" style="width: 5rem;">Delete</button>
-                                    </td>
-                                </tr>
-                                <? }; ?>                                
+                                <?php foreach ($transaksi as $row) { ?>
+                                    <tr>
+                                        <td class="text-left py-3 px-4"><?= $row['id_transaksi'] ?></td>
+                                        <td class="text-left py-3 px-4"><?= $row['nama'] ?></td>
+                                        <td class="text-left py-3 px-4"><?= $row['nomorhp'] ?></td>
+                                        <td class="text-left py-3 px-4"><?= $row['operator'] ?></td>
+                                        <td class="text-left py-3 px-4"><?= $row['nominal'] ?></td>
+                                        <td class="text-left py-3 px-4">
+                                            <a href="pageEdit">
+                                                <button class="relative bg-green-200 rounded-full button" style="width: 5rem;">Edit</button>
+                                            </a>
+                                            <a href="">
+                                                <button class="relative bg-red-200 rounded-full button" style="width: 5rem;">Delete</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php }; ?>
                             </tbody>
                         </table>
                     </div>

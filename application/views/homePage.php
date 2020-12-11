@@ -24,7 +24,7 @@
 
 <body class="h-screen tracking-normal text-gray-900">
     <div class="h-screen pb-14 bg-right bg-cover">
-        <div class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div class="container pt-24 md:pt-30 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <!-- Left Col -->
             <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
                 <h1 class="my-4 text-3xl md:text-5xl text-blue-700 font-bold leading-tight text-center md:text-left">
@@ -43,7 +43,7 @@
 
             <!-- Right Col -->
             <div class="w-full xl:w-3/5 overflow-y-hidden">
-                <a href="https://storyset.com/communication"><img class="w-5/6 mx-auto lg:mr-0" src="./assets/image/Call center-amico.svg"></a>
+                <a href="https://storyset.com/communication"><img class="w-5/6 mx-auto lg:mr-0" src="../assets/image/Call center-amico.svg"></a>
             </div>
 
             <!-- Leaderboard -->
@@ -70,7 +70,7 @@
                                             <td class="text-left py-3 px-4"><?=$row['nama']?></td>
                                             <td class="text-left py-3 px-4"><?=$row['operator']?></td>
                                         </tr>                                        
-                                    <? }; ?>   
+                                    <?php }; ?>   
                                     </tbody>
                                 </table>
                             </div>
