@@ -64,7 +64,7 @@ class Pulsa extends CI_Controller
         print_r($data);
         $this->load->model('model_transaksi');
         $this->model_transaksi->create_transaksi($data);
-        $this->session->set_flashdata('status', 'success');
+        $this->session->set_flashdata('edit_status', 'success');
         redirect('Pulsa/transaksi');
     }
     
@@ -103,7 +103,8 @@ class Pulsa extends CI_Controller
     }
 
     public function edit($id){
-        if(isset($sess)){  
+        $sess = $this->session->userdata('user');
+        if(isset($sess)){
             $data['id'] = $id;
             $this->load->view('pageEdit',$data);        
         }else{
@@ -112,6 +113,7 @@ class Pulsa extends CI_Controller
     }
 
     public function edit_process(){
+        $sess = $this->session->userdata('user');
         if(isset($sess)){  
             $id = $this->input->post('id');
             $name = $this->input->post('cus_name');
@@ -126,6 +128,8 @@ class Pulsa extends CI_Controller
             ];
             $this->load->model('model_transaksi');
             $this->model_transaksi->update_transaksi($id,$data);
+            $this->session->set_flashdata('status', 'success');
+            redirect('Pulsa/history');
         }else{
             redirect('Pulsa/login');
         }

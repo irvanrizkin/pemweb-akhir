@@ -31,7 +31,7 @@
         </section>
 
         <section class="mt-6">
-            <form class="bg-transparent" action="<?php base_url('Pulsa/edit_process')?>" method="post" autocomplete="off" name="operator">
+            <form class="bg-transparent" action="<?= base_url('Pulsa/edit_process') ?>" method="post" autocomplete="off" name="operator" id="transaksi">
                 <input type="hidden" name="id" value="<?= $id?>">
                 <div class="block mt-2 rounded">
                     <label class="block text-sm text-gray-600">Name</label>
@@ -45,17 +45,17 @@
                     <label class="block text-sm text-gray-600">Operator</label>
                     <!-- <p class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2"
                         id="myInput">-</p> -->
-                    <input type="text" class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="myInput">
+                    <input type="text" class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="myInput" name="operator">
                 </div>
                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                     <label class="block text-sm text-gray-600">Nominal</label>
-                    <select class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" name="Nominal" id="Nominal">
-                        <option>Rp 5,000</option>
-                        <option>Rp 10,000</option>
-                        <option>Rp 20,000</option>
-                        <option>Rp 25,000</option>
-                        <option>Rp 50,000</option>
-                        <option>Rp 100,000</option>
+                    <select class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" name="nominal" id="Nominal" form="transaksi">
+                        <option value="5000">Rp 5,000</option>
+                        <option value="10000">Rp 10,000</option>
+                        <option value="20000">Rp 20,000</option>
+                        <option value="25000">Rp 25,000</option>
+                        <option value="50000">Rp 50,000</option>
+                        <option value="100000">Rp 100,000</option>
                     </select>
                 </div>
                 <div class="flex w-full space-x-10 justify-center md:justify-start pb-2 lg:pb-0">
@@ -65,9 +65,7 @@
                         </a>
                     </div>
                     <div class="block mt-4 rounded">
-                        <a href="modal-open">
-                            <button class="modal-open bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 p-2 mt-8 rounded-full px-4">Submit</button>
-                        </a>
+                        <input type="submit" class="bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 p-2 mt-8 rounded-full px-4" value="Submit">
                     </div>
                 </div>
             </form>
@@ -75,7 +73,8 @@
     </main>
 
     <!--Modal-->
-    <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+    <?php if ($this->session->flashdata('edit_status') !== null) { ?>
+    <div class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center">
         <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
         <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
@@ -109,6 +108,7 @@
             </div>
         </div>
     </div>
+    <?php } ?>
 
     <script>
         var openmodal = document.querySelectorAll('.modal-open')

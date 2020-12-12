@@ -27,8 +27,7 @@ class Model_transaksi extends CI_Model {
     {
         return $this->db
                 ->where('id_transaksi' , $id)
-                ->update('transaksi',$data)
-                ->affected_rows();
+                ->update('transaksi',$data);
     }
 
     public function delete_transaksi_all()
