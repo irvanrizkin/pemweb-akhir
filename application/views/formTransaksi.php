@@ -31,7 +31,7 @@
         </section>
 
         <section class="mt-6">
-            <form class="bg-transparent" action="<?= base_url('Pulsa/transaksi_process') ?>" method="post" autocomplete="off" name="transaksi">
+            <form class="bg-transparent" action="<?= base_url('Pulsa/transaksi_process') ?>" method="post" autocomplete="off" name="transaksi" id="transaksi">
                 <div class="block mt-2 rounded">
                     <label class="block text-sm text-gray-600">Name</label>
                     <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="cus_name" name="cus_name" type="text" required placeholder="Your Name">
@@ -48,13 +48,13 @@
                 </div>
                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                     <label class="block text-sm text-gray-600">Nominal</label>
-                    <select class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" name="nominal" id="Nominal">
-                        <option>Rp 5,000</option>
-                        <option>Rp 10,000</option>
-                        <option>Rp 20,000</option>
-                        <option>Rp 25,000</option>
-                        <option>Rp 50,000</option>
-                        <option>Rp 100,000</option>
+                    <select class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" name="nominal" id="Nominal" form="transaksi">
+                        <option value="5000">Rp 5,000</option>
+                        <option value="10000">Rp 10,000</option>
+                        <option value="20000">Rp 20,000</option>
+                        <option value="25000">Rp 25,000</option>
+                        <option value="50000">Rp 50,000</option>
+                        <option value="100000">Rp 100,000</option>
                     </select>
                 </div>
                 <div class="block mt-4 rounded">
