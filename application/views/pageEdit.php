@@ -31,7 +31,8 @@
         </section>
 
         <section class="mt-6">
-            <form class="bg-transparent" action="#" method="post" autocomplete="off" name="operator">
+            <form class="bg-transparent" action="<?php base_url('Pulsa/edit_process')?>" method="post" autocomplete="off" name="operator">
+                <input type="hidden" name="id" value="<?= $id?>">
                 <div class="block mt-2 rounded">
                     <label class="block text-sm text-gray-600">Name</label>
                     <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="cus_name" name="cus_name" type="text" required="" placeholder="Your Name">
@@ -59,7 +60,7 @@
                 </div>
                 <div class="flex w-full space-x-10 justify-center md:justify-start pb-2 lg:pb-0">
                     <div class="block mt-4 rounded">
-                        <a href="">
+                        <a href="<?php base_url('Pulsa/admin')?>">
                             <button class="bg-gray-200 font-bold text-lg hover:bg-gray-300 p-2 mt-8 rounded-full px-4">Close</button>
                         </a>
                     </div>

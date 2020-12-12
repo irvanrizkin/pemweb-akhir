@@ -43,8 +43,7 @@ class Model_transaksi extends CI_Model {
     {
         return $this->db
                 ->where('id_transaksi' , $id)
-                ->delete('transaksi')
-                ->affected_rows();
+                ->delete('transaksi');                
     }
 
 }

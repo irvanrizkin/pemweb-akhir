@@ -25,7 +25,7 @@
 <body class="bg-gray-100 flex">
     <aside class="bg-blue-700 bg-sidebar relative h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
-            <a href="#" class="text-white text-3xl font-semibold uppercase hovertext-gray-300">Admin</a>
+            <a href="<?= base_url('Pulsa/admin')?>" class="text-white text-3xl font-semibold uppercase hovertext-gray-300">Admin</a>
         </div>
         <nav class="text-white text-base font-semibold pt-3">
             <a href="admin" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
@@ -35,7 +35,7 @@
                 <i class="fas fa-table mr-3"></i>Transaction
             </a>
         </nav>
-        <a href="index" class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4">
+        <a href="logout" class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4">
             <i class="fas fa-sign-out-alt mr-3"></i>
             LogOut
         </a>
@@ -62,20 +62,15 @@
                                 </tr>
                             </thead>
                             <tbody class="text-gray-700">
+                            <?php foreach ($transaksi as $row) { ?>
                                 <tr>
-                                    <td class="text-left py-3 px-4">001</td>
-                                    <td class="text-left py-3 px-4">Aldi Himawan</td>
-                                    <td class="text-left py-3 px-4">08123456789</td>
-                                    <td class="text-left py-3 px-4">Google</td>
-                                    <td class="text-left py-3 px-4">Rp 100.000,00</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-left py-3 px-4">002</td>
-                                    <td class="text-left py-3 px-4">Kuro</td>
-                                    <td class="text-left py-3 px-4">08223456789</td>
-                                    <td class="text-left py-3 px-4">Edge</td>
-                                    <td class="text-left py-3 px-4">Rp 100.000,00</td>
-                                </tr>
+                                        <td class="text-left py-3 px-4"><?= $row['id_transaksi'] ?></td>
+                                        <td class="text-left py-3 px-4"><?= $row['nama'] ?></td>
+                                        <td class="text-left py-3 px-4"><?= $row['nomorhp'] ?></td>
+                                        <td class="text-left py-3 px-4"><?= $row['operator'] ?></td>
+                                        <td class="text-left py-3 px-4"><?= $row['nominal'] ?></td>                                        
+                                </tr>                                
+                            <?php }; ?>
                             </tbody>
                         </table>
                     </div>
