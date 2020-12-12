@@ -61,8 +61,11 @@ class Pulsa extends CI_Controller
             'operator' => $operator,
             'nominal' => $nominal
         ];
+        print_r($data);
         $this->load->model('model_transaksi');
-        $this->model_transaksi->create_transaksi($data);           
+        $this->model_transaksi->create_transaksi($data);
+        $this->session->set_flashdata('status', 'success');
+        redirect('Pulsa/transaksi');
     }
     
     public function admin()

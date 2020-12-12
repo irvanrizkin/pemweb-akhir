@@ -5,8 +5,7 @@ class Model_transaksi extends CI_Model {
     public function create_transaksi($data)
     {
         return $this->db
-                ->insert('transaksi',$data)
-                ->affected_rows();
+                ->insert('transaksi',$data);
     }
 
     public function get_transaksi_all()

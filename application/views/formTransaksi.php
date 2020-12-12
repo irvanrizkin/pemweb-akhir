@@ -34,11 +34,11 @@
             <form class="bg-transparent" action="<?= base_url('Pulsa/transaksi_process') ?>" method="post" autocomplete="off" name="transaksi">
                 <div class="block mt-2 rounded">
                     <label class="block text-sm text-gray-600">Name</label>
-                    <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="cus_name" name="cus_name" type="text" required="" placeholder="Your Name">
+                    <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="cus_name" name="cus_name" type="text" required placeholder="Your Name">
                 </div>
                 <div class="block mt-2 rounded">
                     <label class="block text-sm text-gray-600">Phone Number</label>
-                    <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="phoneNumber" name="phoneNumber" type="text" required="" placeholder="0822xxxxxxxx" onkeyup="cekNomorHP()">
+                    <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="phoneNumber" name="phoneNumber" type="text" required placeholder="0822xxxxxxxx" onkeyup="cekNomorHP()">
                 </div>
                 <div class="inline-block mt-2 w-1/2 pr-1">
                     <label class="block text-sm text-gray-600">Operator</label>
@@ -58,14 +58,15 @@
                     </select>
                 </div>
                 <div class="block mt-4 rounded">
-                    <input type="submit" class="modal-open w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" value="Submit">
+                    <input type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" value="Submit">
                 </div>
             </form>
         </section>
     </main>
 
     <!--Modal-->
-    <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+    <?php if ($this->session->flashdata('status') !== null) { ?>
+        <div class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center">
         <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
         <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
@@ -99,6 +100,7 @@
             </div>
         </div>
     </div>
+    <?php } ?>
 
     <script>
         var openmodal = document.querySelectorAll('.modal-open')
