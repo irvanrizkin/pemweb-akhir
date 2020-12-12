@@ -71,10 +71,10 @@
                                         <td class="text-left py-3 px-4"><?= $row['operator'] ?></td>
                                         <td class="text-left py-3 px-4"><?= $row['nominal'] ?></td>
                                         <td class="text-left py-3 px-4">
-                                            <a href="pageEdit">
+                                            <a href="<?= 'edit/' . $row['id_transaksi']?>">
                                                 <button class="relative bg-green-200 rounded-full button" style="width: 5rem;">Edit</button>
                                             </a>
-                                            <a href="">
+                                            <a href="<?= 'delete/' . $row['id_transaksi']?>">
                                                 <button class="relative bg-red-200 rounded-full button" style="width: 5rem;">Delete</button>
                                             </a>
                                         </td>

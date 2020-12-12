@@ -31,7 +31,7 @@
         </section>
 
         <section class="mt-6">
-            <form class="bg-transparent" action="#" method="post" autocomplete="off" name="operator">
+            <form class="bg-transparent" action="<?= base_url('Pulsa/transaksi_process') ?>" method="post" autocomplete="off" name="transaksi">
                 <div class="block mt-2 rounded">
                     <label class="block text-sm text-gray-600">Name</label>
                     <input class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="cus_name" name="cus_name" type="text" required="" placeholder="Your Name">
@@ -44,11 +44,11 @@
                     <label class="block text-sm text-gray-600">Operator</label>
                     <!-- <p class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2"
                         id="myInput">-</p> -->
-                    <input type="text" class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" id="myInput">
+                    <input type="text" class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" name="operator" id="myInput">
                 </div>
                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                     <label class="block text-sm text-gray-600">Nominal</label>
-                    <select class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" name="Nominal" id="Nominal">
+                    <select class="bg-gray-200 pt-2 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-blue-600 transition duration-500 px-2 pb-2" name="nominal" id="Nominal">
                         <option>Rp 5,000</option>
                         <option>Rp 10,000</option>
                         <option>Rp 20,000</option>
@@ -142,108 +142,108 @@
 
     <script>
         function cekNomorHP() {
-            var x = document.forms["operator"]["phoneNumber"].value;
+            var x = document.forms["transaksi"]["phoneNumber"].value;
 
-            const operators = {
-                "operators": [{
+            const transaksis = {
+                "transaksis": [{
                         "prefix": 0811,
-                        "operator": "Halo"
+                        "transaksi": "Halo"
                     },
                     {
                         "prefix": 0812,
-                        "operator": "Simpati"
+                        "transaksi": "Simpati"
                     },
                     {
                         "prefix": 0813,
-                        "operator": "Simpati"
+                        "transaksi": "Simpati"
                     },
                     {
                         "prefix": 0821,
-                        "operator": "Simpati"
+                        "transaksi": "Simpati"
                     },
                     {
                         "prefix": 0822,
-                        "operator": "Simpati"
+                        "transaksi": "Simpati"
                     },
                     {
                         "prefix": 0852,
-                        "operator": "AS"
+                        "transaksi": "AS"
                     },
                     {
                         "prefix": 0853,
-                        "operator": "AS"
+                        "transaksi": "AS"
                     },
                     {
                         "prefix": 0823,
-                        "operator": "AS"
+                        "transaksi": "AS"
                     },
                     {
                         "prefix": 0851,
-                        "operator": "AS"
+                        "transaksi": "AS"
                     },
                     {
                         "prefix": 0814,
-                        "operator": "Indosat M2 Broadband"
+                        "transaksi": "Indosat M2 Broadband"
                     },
                     {
                         "prefix": 0815,
-                        "operator": "Matrix"
+                        "transaksi": "Matrix"
                     },
                     {
                         "prefix": 0816,
-                        "operator": "Matrix"
+                        "transaksi": "Matrix"
                     },
                     {
                         "prefix": 0855,
-                        "operator": "Matrix"
+                        "transaksi": "Matrix"
                     },
                     {
                         "prefix": 0856,
-                        "operator": "IM3"
+                        "transaksi": "IM3"
                     },
                     {
                         "prefix": 0857,
-                        "operator": "IM3"
+                        "transaksi": "IM3"
                     },
                     {
                         "prefix": 0858,
-                        "operator": "Mentari"
+                        "transaksi": "Mentari"
                     },
                     {
                         "prefix": 0817,
-                        "operator": "XL"
+                        "transaksi": "XL"
                     },
                     {
                         "prefix": 0818,
-                        "operator": "XL"
+                        "transaksi": "XL"
                     },
                     {
                         "prefix": 0819,
-                        "operator": "XL"
+                        "transaksi": "XL"
                     },
                     {
                         "prefix": 0859,
-                        "operator": "XL"
+                        "transaksi": "XL"
                     },
                     {
                         "prefix": 0877,
-                        "operator": "XL"
+                        "transaksi": "XL"
                     },
                     {
                         "prefix": 0878,
-                        "operator": "XL"
+                        "transaksi": "XL"
                     },
                     {
                         "prefix": 0838,
-                        "operator": "Axis"
+                        "transaksi": "Axis"
                     },
                     {
                         "prefix": 0831,
-                        "operator": "Axis"
+                        "transaksi": "Axis"
                     },
                     {
                         "prefix": 0832,
-                        "operator": "Axis"
+                        "transaksi": "Axis"
                     },
                 ]
             };
@@ -253,9 +253,9 @@
             nohpElem.addEventListener('keyup', (event) => {
                 let prefix = nohpElem.value;
                 let substr = prefix.substring(0, 4);
-                operators.operators.forEach((operator) => {
-                    if (substr == operator.prefix) {
-                        opElem.value = operator.operator;
+                transaksis.transaksis.forEach((transaksi) => {
+                    if (substr == transaksi.prefix) {
+                        opElem.value = transaksi.transaksi;
                     }
                 })
             });
