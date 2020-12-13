@@ -136,7 +136,8 @@ class Pulsa extends CI_Controller
 
     }
 
-    public function delete($id){        
+    public function delete($id){
+        $sess = $this->session->userdata('user');        
         if(isset($sess)){  
             $this->load->model('model_transaksi');
             $this->model_transaksi->delete_transaksi_by_id($id);        
