@@ -5,7 +5,7 @@ class Pulsa extends CI_Controller
 {
     public function index() {
         $this->load->model('model_transaksi');
-        $transaksi['transaksi'] = $this->model_transaksi->get_transaksi_all();                
+        $transaksi['transaksi'] = $this->model_transaksi->get_sort_operator_sum();                
         $this->load->view('homePage',$transaksi);
     }
 

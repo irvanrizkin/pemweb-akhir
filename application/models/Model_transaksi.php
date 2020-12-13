@@ -44,4 +44,15 @@ class Model_transaksi extends CI_Model {
                 ->delete('transaksi');                
     }
 
+    public function get_sort_operator_sum()
+    {
+        return $this->db
+                ->select('operator')
+                ->select_sum('nominal')
+                ->group_by('operator')
+                ->order_by('nominal', 'DESC')
+                ->get('transaksi')
+                ->result_array(); 
+    }
+
 }

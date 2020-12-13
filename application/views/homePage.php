@@ -19,7 +19,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <title>Home Page</title>
+    <title>Pulse</title>
 </head>
 
 <body class="h-screen tracking-normal text-gray-900">
@@ -28,10 +28,10 @@
             <!-- Left Col -->
             <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
                 <h1 class="my-4 text-3xl md:text-5xl text-blue-700 font-bold leading-tight text-center md:text-left">
-                    Welcome
+                    Pulse
                 </h1>
                 <p class="leading-normal text-base md:text-2xl mb-6 text-center md:text-left">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Keep connect, don't disconnect
                 </p>
                 <div class="flex w-full space-x-10 justify-center md:justify-start pb-2 lg:pb-0">
                     <a href="<?= base_url('Pulsa/login');?>" class="bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 p-2 mt-8 rounded-full px-4">
@@ -53,23 +53,21 @@
                     <main class="w-full flex-grow p-6">
                         <div class="w-full mt-12">
                             <p class="text-xl pb-3 flex items-center">
-                                <i class="fas fa-list mr-3"></i>Leaderboard
+                                <i class="fas fa-list mr-3"></i>Most bought operators
                             </p>
                             <div class="bg-white overflow-auto">
                                 <table class="min-w-full bg-white">
                                     <thead class="bg-gray-800 text-white">
                                         <tr>
-                                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
-                                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nama</th>
                                             <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Operator</th>
+                                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nominal</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-gray-700">
                                     <?php foreach($transaksi as $row) { ?>
                                         <tr>
-                                            <td class="text-left py-3 px-4"><?=$row['id_transaksi']?></td>
-                                            <td class="text-left py-3 px-4"><?=$row['nama']?></td>
                                             <td class="text-left py-3 px-4"><?=$row['operator']?></td>
+                                            <td class="text-left py-3 px-4"><?=$row['nominal']?></td>
                                         </tr>                                        
                                     <?php }; ?>   
                                     </tbody>
