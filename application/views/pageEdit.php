@@ -26,7 +26,7 @@
     <main class="bg-white max-w-lg mx-auto p-4 md:p-9 my-10 rounded-lg shadow-2xl">
         <section class="w-full lg:w-1/2 mt-6 pl-0 lg:pl-2">
             <p class="text-xl pb-6 items-center">
-                <i class="fas fa-list mr-3"></i>Transaction Form
+                <i class="fas fa-list mr-3"></i>Edit Transaction
             </p>
         </section>
 
@@ -60,7 +60,7 @@
                 </div>
                 <div class="flex w-full space-x-10 justify-center md:justify-start pb-2 lg:pb-0">
                     <div class="block mt-4 rounded">
-                        <a href="<?php base_url('Pulsa/admin')?>">
+                        <a href="<?=base_url('Pulsa/admin')?>">
                             <button class="bg-gray-200 font-bold text-lg hover:bg-gray-300 p-2 mt-8 rounded-full px-4">Close</button>
                         </a>
                     </div>
