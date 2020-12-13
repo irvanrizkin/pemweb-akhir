@@ -25,17 +25,17 @@ class Pulsa extends CI_Controller
 
     private function _login(){
         $username = $this->input->post('username');
-        $password = $this->input->post('password');        
-
+        $password = $this->input->post('password');
+        
         $this->load->model('model_admin');
-        $user = $this->model_admin->get_admin_by_username($username);                                                               
+        $user = $this->model_admin->get_admin_by_username($username);
         if($username === $user['username']){            
-            if(password_verify($password,$user['password']) || $password === $user['password']){
+            if(strtoupper(hash("sha256", $password)) === $user['password']){
                 $this->session->set_userdata('user',$user);                
                 redirect('Pulsa/admin');
             }else{
                 $this->session->set_flashdata('message','<p style="color:red">Password salah','</p>');
-                redirect('Pulsa/login');                
+                redirect('Pulsa/login'); 
             }
         }else{
             $this->session->set_flashdata('message','<p style="color:red">username salah','</p>');

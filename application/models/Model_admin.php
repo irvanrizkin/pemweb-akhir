@@ -26,7 +26,7 @@ class Model_admin extends CI_Model {
     public function get_admin_by_username($username)
     {
         return $this->db
-                ->get('admin',['username' => $username])
+                ->get_where('admin',array('username' => $username))
                 ->row_array();
     }
 
