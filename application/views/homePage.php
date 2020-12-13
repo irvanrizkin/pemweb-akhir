@@ -11,10 +11,10 @@
 
     <!-- Tailwinds -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="./assets/style/tailwind.css" rel="stylesheet">
+    <link href="../assets/style/tailwind.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="../assets/style/style.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -24,7 +24,7 @@
 
 <body class="h-screen tracking-normal text-gray-900">
     <div class="h-screen pb-14 bg-right bg-cover">
-        <div class="container pt-24 md:pt-30 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div class="container pt-24 md:pt-20 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <!-- Left Col -->
             <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
                 <h1 class="my-4 text-3xl md:text-5xl text-blue-700 font-bold leading-tight text-center md:text-left">
@@ -43,7 +43,7 @@
 
             <!-- Right Col -->
             <div class="w-full xl:w-3/5 overflow-y-hidden">
-                <a href="https://storyset.com/communication"><img class="w-5/6 mx-auto lg:mr-0" src="../assets/image/Call center-amico.svg"></a>
+                <a href="https://storyset.com/communication"><img class="w-5/6 mx-auto lg:mr-0" src="assets/image/Call center-amico.svg"></a>
             </div>
 
             <!-- Leaderboard -->
